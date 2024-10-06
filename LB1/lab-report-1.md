@@ -5,7 +5,7 @@
 <br>
 
 ### Варіант 13, модель у середовищі NetLogo:
-[Traffic Basic](http://www.netlogoweb.org/launch#http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Fruit%20Wars.nlogo)
+[Fruit Wars](http://www.netlogoweb.org/launch#http://www.netlogoweb.org/assets/modelslib/Sample%20Models/Social%20Science/Economics/Fruit%20Wars.nlogo)
 <br>
 
 ### Вербальний опис моделі:
