@@ -7,13 +7,13 @@
         <modelSetupCommands>setup</modelSetupCommands>
         <modelStepCommands>go</modelStepCommands>
         <modelStopCondition>ticks &gt; 2000</modelStopCondition>
-        <modelStepLimit>1</modelStepLimit>
-        <modelMetricReporter>mean [energy] of foragers</modelMetricReporter>
+        <modelStepLimit>100</modelStepLimit>
+        <modelMetricReporter>sum [energy] of foragers</modelMetricReporter>
         <modelMeasureIf>true</modelMeasureIf>
     </modelInfo>
     <fitnessInfo>
         <fitnessMinimized>false</fitnessMinimized>
-        <fitnessCollecting>MEAN_ACROSS_STEPS</fitnessCollecting>
+        <fitnessCollecting>SUM_ACROSS_STEPS</fitnessCollecting>
         <fitnessSamplingReplications>10</fitnessSamplingReplications>
         <fitnessCombineReplications>MEAN</fitnessCombineReplications>
     </fitnessInfo>
@@ -26,15 +26,9 @@
         <paramSpec>["collaboration-bonus" [0.1 "C" 5]]</paramSpec>
         <paramSpec>["rate-of-mutation" [0 0.1 10]]</paramSpec>
     </searchSpace>
-    <searchMethod type="StandardGA">
-        <searchMethodParameter name="mutation-rate" value="0.01"/>
-        <searchMethodParameter name="population-size" value="50"/>
-        <searchMethodParameter name="tournament-size" value="3"/>
-        <searchMethodParameter name="population-model" value="generational"/>
-        <searchMethodParameter name="crossover-rate" value="0.7"/>
-    </searchMethod>
+    <searchMethod type="RandomSearch"/>
     <chromosomeRepresentation type="GrayBinaryChromosome"/>
-    <caching>true</caching>
+    <caching>false</caching>
     <evaluationLimit>300</evaluationLimit>
     <bestCheckingNumReplications>1</bestCheckingNumReplications>
 </search>
