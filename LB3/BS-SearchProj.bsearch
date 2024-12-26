@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!DOCTYPE search SYSTEM "behaviorsearch.dtd">
+<search>
+    <bsearchVersionNumber>1.10</bsearchVersionNumber>
+    <modelInfo>
+        <modelFile>C:\_Work\NURE\KSIM-Korotetskyi-SPm-23-4\LB3\FruitWars.nlogo</modelFile>
+        <modelSetupCommands>setup</modelSetupCommands>
+        <modelStepCommands>go</modelStepCommands>
+        <modelStopCondition>ticks &gt; 2000</modelStopCondition>
+        <modelStepLimit>1</modelStepLimit>
+        <modelMetricReporter>mean [energy] of foragers</modelMetricReporter>
+        <modelMeasureIf>true</modelMeasureIf>
+    </modelInfo>
+    <fitnessInfo>
+        <fitnessMinimized>false</fitnessMinimized>
+        <fitnessCollecting>MEAN_ACROSS_STEPS</fitnessCollecting>
+        <fitnessSamplingReplications>10</fitnessSamplingReplications>
+        <fitnessCombineReplications>MEAN</fitnessCombineReplications>
+    </fitnessInfo>
+    <searchSpace>
+        <paramSpec>["initial-fruit-bushes" [0 1 40]]</paramSpec>
+        <paramSpec>["initial-foragers" [1 1 100]]</paramSpec>
+        <paramSpec>["bush-growth-chance" [0 1 100]]</paramSpec>
+        <paramSpec>["ticks-to-flee" [0 1 100]]</paramSpec>
+        <paramSpec>["max-age" [1 1 500]]</paramSpec>
+        <paramSpec>["collaboration-bonus" [0.1 "C" 5]]</paramSpec>
+        <paramSpec>["rate-of-mutation" [0 0.1 10]]</paramSpec>
+    </searchSpace>
+    <searchMethod type="StandardGA">
+        <searchMethodParameter name="mutation-rate" value="0.01"/>
+        <searchMethodParameter name="population-size" value="50"/>
+        <searchMethodParameter name="tournament-size" value="3"/>
+        <searchMethodParameter name="population-model" value="generational"/>
+        <searchMethodParameter name="crossover-rate" value="0.7"/>
+    </searchMethod>
+    <chromosomeRepresentation type="GrayBinaryChromosome"/>
+    <caching>true</caching>
+    <evaluationLimit>300</evaluationLimit>
+    <bestCheckingNumReplications>1</bestCheckingNumReplications>
+</search>
